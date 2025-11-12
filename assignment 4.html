@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Employment Application Form</h1>
+    <p> Please complete all section of this form. Field marked with * are required</p>
+    <fieldset>
+        <table border="0">
+        <legend>Personal Information</legend>
+        <tr>
+         <td><lable>Tittle:</label></td>
+                <td width="70%">
+                    <select id="please select" name="please select">
+                        <option value="please select"> please select</option>
+                        <option value="Mr."> Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Dr.">dr.</option>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><label for="First Name">First Name*:</label></td>
+                    <td><input type="text" id="First Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Last Name">Last Name*:</lable> </td>
+                        <td><input type="text" id="Last Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email Address">Email Address*:</lable></td>
+                        <td><input type="text" id="Email Address"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Phone Number">phone number*:</lable></td>
+                        <td><input type="tel" id="phone number" placeholder="123-456-7890"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Date of Birth">Date Of Birth*</lable></td>
+                        <td><input type="date" id="Date Of Birth"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Address">Address*</label></td>
+                        <td><textarea name="" id=""></textarea></td>
+                    </tr>
+                </table>
+    </fieldset>
+    </fieldset>
+    <fieldset>
+        <table border="0">
+            <legend>Employment Details</legend>
+            <tr>
+                <td><label for="Desired Position"></label>Desired Position*:</td>
+                <td><select name="" id="">
+                    <option value="Please Select">Please Select</option>
+                    <option value="Software Developer">Software Developer</option>
+                    <option value="UI/UX Designer">UI/UX Designer</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="Expected Salary ($)"></label>Expected Salary  ($):</td>
+                <td><input type="text" id="Expected Salary($)"></td>
+            </tr>
+            <tr>
+                <td><label for="Available Start Date"></label>Available Start Date*:</td>
+                <td><input type="date" id="Available Start Date"></td>
+            </tr>
+            <tr>
+                <td><label for="Employment Type"></label>Employment Type*:</td>
+                <td width=""><input type="radio" id="Employment Type">Full-time</td>
+                <td width=""><input type="radio" id="Employment Type">Part-time</td>
+                <td width=""><input type="radio" id="Employment Type">Contract</td>
+            </tr>
+            <tr>
+                <td><label for="Remote Work Options"></label>Remote Work Options:</td>
+                <td><input type="checkbox" id="Remote work options">Open to remote work</td>
+                <td><input type="checkbox" id="Remote work options">Interested in hybrid model</td>
+            </tr>
+
+        </table>
+    </fieldset>
+<fieldset>
+        <table border="0">
+            <legend>Education History</legend>
+            <tr style="text-align: left;">
+            <th>Institutions</th>
+            <th>Degree</th>
+            <th>Field of Study</th>
+            <th>Graduation Year</th>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td>
+                    <select name="" id="">
+                        <option value="Select">Select</option>
+                        <option value="High School">High School</option>
+                        <option value="Associate">Associate</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="PhD">PhD</option>
+                    </select></td>
+                    <td><input type="text"></td>
+                    <td><input type="word"></td>
+            </tr><tr>
+                <td><input type="text"></td>
+                <td>
+                    <select name="" id="">
+                        <option value="Select">Select</option>
+                        <option value="High School">High School</option>
+                        <option value="Associate">Associate</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="PhD">PhD</option>
+                    </select></td>
+                    <td><input type="text"></td>
+                    <td><input type="word"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table border="0">
+            <legend style="text-align: left;">Work Experience</legend>
+            <tr>
+                <th>Company</th>
+                <th>Position</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Responsibilities</th>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="date"></td>
+                <td><input type="date"></td>
+                <td><textarea name="" id=""></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="date"></td>
+                <td><input type="date"></td>
+                <td><textarea name="" id=""></textarea></td>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>Skill Assessment</legend>
+            <p>Rate your proficiency in the following skills (1=Beginner,5=Expert):</p>
+            <tr>
+                <td>Communication:</td>
+                <td><input type="range" id="Communication"></td>
+            </tr>
+            <tr>
+                <td>Leadership:</td>
+                <td><input type="range" id="Leadership"></td>
+            </tr>
+            <tr>
+                <td>Technical Ability:</td>
+                <td><input type="range" id="Technical Ability"></td>
+            </tr>
+            <tr>
+                <td>Additional Skills:</td>
+            </tr>
+            <tr>
+                <td><textarea name="" id="">List any other relevant skills</textarea></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>Documents</legend>
+            <tr>
+                <td>Upload Resume(PDF/DOCX)*:</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>Cover Letter(optional):</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>Portfolio Link:</td>
+                <td><input type="text" placeholder="https.//"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>References</legend>
+            <p>Please provide at least two professional references:</p>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="Name"></td>
+                <td><input type="text" id="Position"></td>
+                <td><input type="text" id="Company"></td>
+                <td><input type="text" id="Email"></td>
+                <td><input type="tel" id="Phone" placeholder="123-456-7890"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="Name"></td>
+                <td><input type="text" id="Position"></td>
+                <td><input type="text" id="Company"></td>
+                <td><input type="text" id="Email"></td>
+                <td><input type="tel" id="Phone" placeholder="123-456-7890"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <table>
+            <legend>Terms and Conditions</legend>
+            <p><input type="checkbox">
+            <label for="text">I hereby declare that the information provided is true and accurate to the best of my knowlwdge.*</label>
+            </p>
+            <p><input type="checkbox">
+                <label for="text">I agree to the processing of my personal data for the purpose of recruitment.*</label>
+            </p>
+            <p><input type="checkbox">
+                <label for="text">I would like to receive notifications about future job oppurtunities.</label>
+            </p>
+            <input type="button" value="Submit Application"><input type="button" value="Clear Form">
+        </table>
+    </fieldset>
+    
+
+</body>
+</html>
