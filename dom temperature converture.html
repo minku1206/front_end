@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          background-color: bisque;
+          font-family: Arial, sans-serif;
+          background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKIsG_fO9-EKqd9Sg881AMtP-4qharRjxlWQ&s");
+          background-size: cover;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: blueviolet;
+            border: 2px solid black;
+            box-shadow: 0 0 30px lightgrey;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStFbHk1zqalIWqdUR_HBU5fnRmSncFRugFKw&s");
+            background-size: 100%;
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 20px lightgrey;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 20px lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h1>Temperature Converter</h1>
+   <!--<input id="a" type="text" value="Amit">--> 
+    <input id="cel" type="number" placeholder="celsius">
+<button onclick="celcius()">celcius</button><br>
+
+<input id="fah" type="number" placeholder="fahrenheit"> 
+<button onclick="fahrenheit()">fahrenheit</button>
+</div>
+
+<script>
+function celcius() {
+    let cel = document.getElementById("cel").value;
+    let fah = (cel * 9/5) + 32;
+    document.getElementById("fah").value = fah;
+}
+
+function fahrenheit() {
+    let fah = document.getElementById("fah").value;
+    let cel = (fah - 32) * 5/9;
+    document.getElementById("cel").value = cel;
+}
+</script>
+</body>
+</html>
