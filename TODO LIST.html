@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Todo List</title>
+
+<style>
+body {
+  margin: 0;
+  background: #f4f5f7;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.container {
+  width: 520px;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.upper-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.upper-bar input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.upper-bar button {
+  padding: 12px 18px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upper-bar select {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.task {
+  background: #e9ecf1;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-left input {
+  width: 18px;
+  height: 18px;
+}
+
+.task-text {
+  font-size: 15px;
+  color: #555;
+}
+
+.task small {
+  display: block;
+  font-size: 11px;
+  color: grey;
+  margin-top: 3px;
+}
+
+.icon span {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>TODO LIST</h1>
+
+  <div class="upper-bar">
+    <input id="taskInput" type="text" placeholder="What needs to be done?">
+    <button onclick="addTask()">Add Task</button>
+    <select id="filter" onchange="renderTasks()">
+      <option value="all">All</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+
+  <div id="taskList"></div>
+</div>
+
+<script>
+let tasks = [
+  {
+    text: "read body language Book 📖",
+    completed: true,
+    date: "8/18/2022, 9:11:54 PM"
+  },
+  {
+    text: "Make Dinner 🍳",
+    completed: true,
+    date: "8/18/2022, 9:11:54 PM"
+  },
+  {
+    text: "do home work",
+    completed: true,
+    date: "8/18/2023, 9:11:54 PM"
+  },
+  {
+    text: "go to the Gym ⚽",
+    completed: true,
+    date: "8/24/2023, 6:30:54 PM"
+  }
+];
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const text = input.value.trim();
+
+  if (text === "") return;
+
+  tasks.push({
+    text: text,
+    completed: false,
+    date: new Date().toLocaleString()
+  });
+
+  input.value = "";
+  renderTasks();
+}
+function toggleTask(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderTasks();
+}
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  renderTasks();
+}
+function editTask(index) {
+  const newText = prompt("Edit your task:", tasks[index].text);
+  if (newText !== null && newText.trim() !== "") {
+    tasks[index].text = newText.trim();
+    renderTasks();
+  }
+}
+function renderTasks() {
+  const list = document.getElementById("taskList");
+  const filter = document.getElementById("filter").value;
+
+  list.innerHTML = "";
+
+  tasks.forEach((task, index) => {
+
+    if (
+      (filter === "completed" && !task.completed) ||
+      (filter === "pending" && task.completed)
+    ) return;
+
+    const div = document.createElement("div");
+    div.className = "task";
+
+    div.innerHTML = `
+      <div class="task-left">
+        <input type="checkbox" ${task.completed ? "checked" : ""}
+          onclick="toggleTask(${index})">
+
+        <div>
+          <div class="task-text" style="
+            text-decoration: ${task.completed ? "line-through" : "none"};
+            opacity: ${task.completed ? "0.6" : "1"};
+          ">
+            ${task.text}
+          </div>
+          <small>${task.date}</small>
+        </div>
+      </div>
+
+      <div class="icon">
+        <span onclick="editTask(${index})">✏️</span>
+        <span onclick="deleteTask(${index})">🗑️</span>
+      </div>
+    `;
+
+    list.appendChild(div);
+  });
+}
+document.getElementById("taskInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") addTask();
+});
+renderTasks();
+</script>
+</body>
+</html>
