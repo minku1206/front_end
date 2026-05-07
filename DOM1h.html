@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const button = document.getElementById("btn");
+const removeButton = document.getElementById("removeBtn");
+const output = document.getElementById("output");
+
+function showMessage() {
+  output.textContent = "Button was clicked!";
+}
+
+button.addEventListener("click", showMessage);
+
+removeButton.addEventListener("click", () => {
+  button.removeEventListener("click", showMessage);
+  output.textContent = "Event removed!";
+});
+</script>
+</body>
+</html>

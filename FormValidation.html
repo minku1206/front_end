@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<form class="form">
+    <div>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" class="c1" placeholder="Enter name">
+    </div><br>
+
+    <div>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" class="c2" placeholder="Enter your Email">
+    </div><br>
+
+    <div>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" class="c3" placeholder="Enter Your Password">
+    </div><br>
+
+    <div>
+        <label for="confirm">Confirm Password</label><br>
+        <input type="password" id="confirm" class="c4" placeholder="Confirm Password">
+    </div><br>
+
+    <div>
+        <label for="mobile">Mobile Number</label><br>
+        <input type="text" id="mobile" class="c5" placeholder="Enter Mobile Number">
+    </div><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p class="error"></p>
+
+<script>
+let form = document.querySelector('.form');
+let error = document.querySelector('.error');
+
+form.addEventListener('submit', function(e) {
+    let name = document.querySelector('.c1').value.trim();
+    let email = document.querySelector('.c2').value.trim();
+    let password = document.querySelector('.c3').value;
+    let confirm = document.querySelector('.c4').value;
+    let mobile = document.querySelector('.c5').value.trim();
+
+    error.textContent = "";
+
+     let namepattern = /^[A-Za-z\s]+$/;
+    if(!namepattern.test(name)) {
+        error.textContent = "Name must contain only letters";
+        e.preventDefault();
+        return;
+    }
+
+    let emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailpattern.test(email)) {
+        error.textContent = "Invalid email format";
+        e.preventDefault();
+        return;
+    }
+
+    if(password.length < 6) {
+        error.textContent = "Password must be at least 6 characters";
+        e.preventDefault();
+        return;
+    }
+
+    if(password !== confirm) {
+        error.textContent = "Passwords do not match";
+        e.preventDefault();
+        return;
+    }
+
+    let mobilepattern = /^[6-9]\d{9}$/;
+    if(!mobilepattern.test(mobile)) {
+        error.textContent = "Invalid Mobile Number";
+        e.preventDefault();
+        return;
+    }
+});
+</script>
+</body>
+</html>

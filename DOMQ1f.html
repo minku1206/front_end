@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Settimeout</h1>
+    <h2 id="p">Wait..</h2>
+    <button id="button">show</button>
+    <script>
+        const button=document.getElementById("button");
+        button.addEventListener("click", function(){
+            setTimeout(showmessage, 4000)
+        });
+        function showmessage(){
+            document.getElementById("p").innerHTML="Hello";
+        }
+    </script>
+</body>
+</html>
